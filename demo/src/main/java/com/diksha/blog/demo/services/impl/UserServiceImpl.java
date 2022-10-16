@@ -4,6 +4,7 @@ import com.diksha.blog.demo.exceptions.ResourceNotFoundException;
 import com.diksha.blog.demo.payloads.UserDto;
 import com.diksha.blog.demo.repositories.UserRepo;
 import com.diksha.blog.demo.services.UserService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepo userRepo;
+
+    @Autowired
+    private ModelMapper modelMapper;
 
     @Override
     public UserDto createUser(UserDto userDto) {
@@ -63,25 +67,20 @@ public class UserServiceImpl implements UserService {
 
     }
 
-    // These conversions can also be done by modelmapper
+    // These conversions can also be done by modelmapper - 1) declare bean in main class 2) autowire 3) apply here
 
     public User dtoToUser(UserDto userDto){
-        User user = new User();
-        user.setId(userDto.getId());
-        user.setName(userDto.getName());
-        user.setEmail(userDto.getEmail());
-        user.setAbout(userDto.getAbout());
-        user.setPassword(userDto.getPassword());
+        User user = this.modelMapper.map(userDto,User.class);
+//        user.setId(userDto.getId());
+//        user.setName(userDto.getName());
+//        user.setEmail(userDto.getEmail());
+//        user.setAbout(userDto.getAbout());
+//        user.setPassword(userDto.getPassword());
         return user;
     }
 
     public UserDto userToDto(User user){
-        UserDto userDto = new UserDto();
-        userDto.setId(user.getId());
-        userDto.setName(user.getName());
-        userDto.setEmail(user.getEmail());
-        userDto.setAbout(user.getAbout());
-        userDto.setPassword(user.getPassword());
+        UserDto userDto = this.modelMapper.map(user,UserDto.class);
         return userDto;
     }
 }
