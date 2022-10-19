@@ -15,11 +15,11 @@ public class CategoryDto {
     private Integer categoryId;
 
     @NotEmpty
-    @Size(min = 4)
+    @Size(min = 4,message = "Min size for title is 4")
     private String categoryTitle;
 
     @NotEmpty
-    @Size(min = 10)
+    @Size(min = 10,message = "Min size for title is 10")
     private String categoryDescription;
 
 }

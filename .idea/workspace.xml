@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4333a33f-fd23-4383-8456-410992fba5ef" name="Changes" comment="Initial commit and db configs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/diksha/blog/demo/entities/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/diksha/blog/demo/entities/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/diksha/blog/demo/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/diksha/blog/demo/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/diksha/blog/demo/payloads/CategoryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/diksha/blog/demo/payloads/CategoryDto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

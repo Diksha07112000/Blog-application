@@ -5,6 +5,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -31,4 +33,8 @@ public class User {
     private String about;
 
     //after this , user ka data fetch krne k lie ya dalne k lie repository create krna hoga -> repositories
+
+    @OneToMany(mappedBy = "user" , cascade = CascadeType.ALL , fetch = FetchType.LAZY)
+    private List<Post> posts = new ArrayList<>();
+
 }
