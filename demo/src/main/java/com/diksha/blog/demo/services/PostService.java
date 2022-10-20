@@ -1,6 +1,5 @@
 package com.diksha.blog.demo.services;
 
-import com.diksha.blog.demo.entities.Post;
 import com.diksha.blog.demo.payloads.PostDto;
 import com.diksha.blog.demo.payloads.PostResponse;
 
@@ -18,7 +17,7 @@ public interface PostService {
 
     //get all posts
     //List<PostDto> getAllPost(Integer pageNumber,Integer pageSize);
-    PostResponse getAllPost(Integer pageNumber, Integer pageSize);
+    PostResponse getAllPost(Integer pageNumber, Integer pageSize, String sortBy, String sortDir);
 
     //get single post
     PostDto getPostById(Integer postId);

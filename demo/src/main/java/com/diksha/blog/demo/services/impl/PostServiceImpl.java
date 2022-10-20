@@ -15,11 +15,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -72,12 +72,22 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public PostResponse getAllPost(Integer pageNumber, Integer pageSize) {
+    public PostResponse getAllPost(Integer pageNumber, Integer pageSize, String sortBy, String sortDir) {
 
         //for pagination
 //        int pageSize = 5;
 //        int pageNumber = 1;
-        Pageable p = PageRequest.of(pageNumber,pageSize);
+        //third parameter for sorting
+
+        Sort sort = null;
+        if(sortDir.equalsIgnoreCase("asc"))
+            sort = Sort.by(sortBy).ascending();
+        else
+            sort = Sort.by(sortBy).descending();
+
+        Pageable p = PageRequest.of(pageNumber,pageSize,sort);
+        //for sorting in descending order
+        //Pageable p = PageRequest.of(pageNumber,pageSize,Sort.by(sortBy).descending());
         Page<Post> pagePosts = this.postRepo.findAll(p);
 
         //for getting all posts
