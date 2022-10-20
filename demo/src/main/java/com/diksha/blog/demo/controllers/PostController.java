@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.Inet4Address;
 import java.util.List;
 
 @RestController
@@ -39,8 +40,12 @@ public class PostController {
 
     //get all posts
     @GetMapping("/posts")
-    public ResponseEntity<List<PostDto>> getAllPosts(){
-        List<PostDto> allPosts = this.postService.getAllPost();
+    public ResponseEntity<List<PostDto>> getAllPosts(
+            //for pagination
+            @RequestParam(value = "pageNumber",defaultValue = "1",required = false) Integer pageNumber,
+            @RequestParam(value = "pageSize",defaultValue = "5",required = false) Integer pageSize
+            ){
+        List<PostDto> allPosts = this.postService.getAllPost(pageNumber,pageSize);
         return new ResponseEntity<List<PostDto>>(allPosts,HttpStatus.OK);
     }
 

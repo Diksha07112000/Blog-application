@@ -14,5 +14,9 @@ public interface PostRepo extends JpaRepository<Post,Integer> {
     //to get all the post from a category
     List<Post> findByCategory(Category category);
 
+    List<Post> findByTitleContaining(String title);
+
+    //since , JPARepository implements paging and sorting, we can directly implement paging and sorting by passing parameters in url.
+
 
 }
