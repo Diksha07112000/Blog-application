@@ -5,6 +5,7 @@ import com.diksha.blog.demo.entities.Post;
 import com.diksha.blog.demo.entities.User;
 import com.diksha.blog.demo.exceptions.ResourceNotFoundException;
 import com.diksha.blog.demo.payloads.PostDto;
+import com.diksha.blog.demo.payloads.PostResponse;
 import com.diksha.blog.demo.repositories.CategoryRepo;
 import com.diksha.blog.demo.repositories.PostRepo;
 import com.diksha.blog.demo.repositories.UserRepo;
@@ -71,7 +72,7 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public List<PostDto> getAllPost(Integer pageNumber,Integer pageSize) {
+    public PostResponse getAllPost(Integer pageNumber, Integer pageSize) {
 
         //for pagination
 //        int pageSize = 5;
@@ -83,8 +84,20 @@ public class PostServiceImpl implements PostService {
         List<Post> allPosts = pagePosts.getContent();
 //        List<Post> allPosts = this.postRepo.findAll();
         List<PostDto> getAllPosts = allPosts.stream().map(post -> this.modelMapper.map(post, PostDto.class)).collect(Collectors.toList());
-        return getAllPosts;
+
+        //generate postResponse
+
+        PostResponse postResponse = new PostResponse();
+        postResponse.setContent(getAllPosts);
+        postResponse.setPageNumber(pagePosts.getNumber());
+        postResponse.setPageSize(pagePosts.getSize());
+        postResponse.setTotalElements(pagePosts.getNumberOfElements());
+        postResponse.setTotalPages(pagePosts.getTotalPages());
+        postResponse.setLastPage(pagePosts.isLast());
+        return postResponse;
     }
+
+
 
     @Override
     public PostDto getPostById(Integer postId) {

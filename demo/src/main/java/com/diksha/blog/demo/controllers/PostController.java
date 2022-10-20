@@ -2,6 +2,7 @@ package com.diksha.blog.demo.controllers;
 
 import com.diksha.blog.demo.payloads.ApiResponse;
 import com.diksha.blog.demo.payloads.PostDto;
+import com.diksha.blog.demo.payloads.PostResponse;
 import com.diksha.blog.demo.services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -40,13 +41,16 @@ public class PostController {
 
     //get all posts
     @GetMapping("/posts")
-    public ResponseEntity<List<PostDto>> getAllPosts(
+    public ResponseEntity<PostResponse> getAllPosts(
             //for pagination
-            @RequestParam(value = "pageNumber",defaultValue = "1",required = false) Integer pageNumber,
-            @RequestParam(value = "pageSize",defaultValue = "5",required = false) Integer pageSize
+            //postResponse should contain pageNumber,pageSize,totalElements,totalpages, lastpage,Content
+            //make PostResponse ->payload
+
+            @RequestParam(value = "pageNumber",defaultValue = "0",required = false) Integer pageNumber,
+            @RequestParam(value = "pageSize",defaultValue = "10",required = false) Integer pageSize
             ){
-        List<PostDto> allPosts = this.postService.getAllPost(pageNumber,pageSize);
-        return new ResponseEntity<List<PostDto>>(allPosts,HttpStatus.OK);
+        PostResponse postResponse = this.postService.getAllPost(pageNumber, pageSize);
+        return new ResponseEntity<PostResponse>(postResponse,HttpStatus.OK);
     }
 
     // get post by ID

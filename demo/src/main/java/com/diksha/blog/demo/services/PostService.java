@@ -2,6 +2,8 @@ package com.diksha.blog.demo.services;
 
 import com.diksha.blog.demo.entities.Post;
 import com.diksha.blog.demo.payloads.PostDto;
+import com.diksha.blog.demo.payloads.PostResponse;
+
 import java.util.List;
 
 public interface PostService {
@@ -15,7 +17,8 @@ public interface PostService {
     void deletePost(Integer postId);
 
     //get all posts
-    List<PostDto> getAllPost(Integer pageNumber,Integer pageSize);
+    //List<PostDto> getAllPost(Integer pageNumber,Integer pageSize);
+    PostResponse getAllPost(Integer pageNumber, Integer pageSize);
 
     //get single post
     PostDto getPostById(Integer postId);
