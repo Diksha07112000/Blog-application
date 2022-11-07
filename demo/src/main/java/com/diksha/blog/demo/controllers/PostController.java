@@ -1,5 +1,6 @@
 package com.diksha.blog.demo.controllers;
 
+import com.diksha.blog.demo.config.AppConstants;
 import com.diksha.blog.demo.payloads.ApiResponse;
 import com.diksha.blog.demo.payloads.PostDto;
 import com.diksha.blog.demo.payloads.PostResponse;
@@ -45,10 +46,10 @@ public class PostController {
             //for pagination
             //postResponse should contain pageNumber,pageSize,totalElements,totalpages, lastpage,Content
             //make PostResponse ->payload
-            @RequestParam(value = "pageNumber",defaultValue = "0",required = false) Integer pageNumber,
-            @RequestParam(value = "pageSize",defaultValue = "10",required = false) Integer pageSize,
-            @RequestParam(value = "sortBy",defaultValue = "postId",required = false) String sortBy,
-            @RequestParam(value = "sortDir",defaultValue = "asc",required = false) String sortDir
+            @RequestParam(value = "pageNumber",defaultValue = AppConstants.PAGE_NUMBER,required = false) Integer pageNumber,
+            @RequestParam(value = "pageSize",defaultValue = AppConstants.PAGE_SIZE,required = false) Integer pageSize,
+            @RequestParam(value = "sortBy",defaultValue = AppConstants.SORT_BY,required = false) String sortBy,
+            @RequestParam(value = "sortDir",defaultValue = AppConstants.SORT_DIR,required = false) String sortDir
             ){
         PostResponse postResponse = this.postService.getAllPost(pageNumber, pageSize,sortBy,sortDir);
         return new ResponseEntity<PostResponse>(postResponse,HttpStatus.OK);
