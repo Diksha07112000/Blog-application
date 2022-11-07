@@ -73,7 +73,6 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public PostResponse getAllPost(Integer pageNumber, Integer pageSize, String sortBy, String sortDir) {
-
         //for pagination
 //        int pageSize = 5;
 //        int pageNumber = 1;

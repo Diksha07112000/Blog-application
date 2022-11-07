@@ -23,7 +23,6 @@ public class UserDto {
     //check only @ sign , not .com pattern , we can use @pattern for that
     private String email;
 
-//    @NotNull
     @NotEmpty
     @Size(min = 3 , max = 10, message = "Password must be 3-10 characters long !!!")
 //  @Pattern(regexp = "anything")

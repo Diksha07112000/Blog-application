@@ -45,7 +45,6 @@ public class PostController {
             //for pagination
             //postResponse should contain pageNumber,pageSize,totalElements,totalpages, lastpage,Content
             //make PostResponse ->payload
-
             @RequestParam(value = "pageNumber",defaultValue = "0",required = false) Integer pageNumber,
             @RequestParam(value = "pageSize",defaultValue = "10",required = false) Integer pageSize,
             @RequestParam(value = "sortBy",defaultValue = "postId",required = false) String sortBy,

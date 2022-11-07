@@ -22,7 +22,7 @@ public class PostDto {
 
     private Date postDate;
 
-    //we will use dto otherwise it will go into infinite loop(category->post->category->post....)
+    //we will use dto, otherwise it will go into infinite loop(category->post->category->post....)
     private CategoryDto category;
 
     private UserDto user;
