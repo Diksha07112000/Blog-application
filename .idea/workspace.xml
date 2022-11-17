@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4333a33f-fd23-4383-8456-410992fba5ef" name="Changes" comment="Initial commit and db configs" />
+    <list default="true" id="4333a33f-fd23-4383-8456-410992fba5ef" name="Changes" comment="Initial commit and db configs">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/diksha/blog/demo/controllers/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/diksha/blog/demo/controllers/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,6 +60,7 @@
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="flattenModules" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
@@ -66,6 +71,11 @@
   </component>
   <component name="ReaderModeSettings">
     <option name="enabled" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.diksha.blog.demo.payloads" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="BlogAppApisApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
