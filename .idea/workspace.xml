@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="4333a33f-fd23-4383-8456-410992fba5ef" name="Changes" comment="Initial commit and db configs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/diksha/blog/demo/BlogAppApisApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/diksha/blog/demo/BlogAppApisApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/diksha/blog/demo/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/diksha/blog/demo/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/diksha/blog/demo/repositories/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/diksha/blog/demo/repositories/UserRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/diksha/blog/demo/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/diksha/blog/demo/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/diksha/blog/demo/exceptions/ResourceNotFoundStringException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/diksha/blog/demo/security/CustomUserDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/diksha/blog/demo/security/CustomUserDetailService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

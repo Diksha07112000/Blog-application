@@ -1,7 +1,7 @@
 package com.diksha.blog.demo.security;
 
 import com.diksha.blog.demo.entities.User;
-import com.diksha.blog.demo.exceptions.ResourceNotFoundStringException;
+import com.diksha.blog.demo.exceptions.ResourceNotFoundException;
 import com.diksha.blog.demo.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,7 +19,7 @@ public class CustomUserDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         //loading user from database by username
-        User user = this.userRepo.findByEmail(username).orElseThrow(() -> new ResourceNotFoundStringException("User", " email ", username));
+        User user = this.userRepo.findByEmail(username).orElseThrow(() -> new ResourceNotFoundException("User", " email "+ username, 0));
 
         // now we need to return UserDetails but we have user , so in user.java let user implement UserDetails
 
